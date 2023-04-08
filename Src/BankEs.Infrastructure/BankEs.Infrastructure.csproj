@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EventStore.Client" Version="22.0.0" />
+    <PackageReference Include="EventStore.Client.Grpc" Version="23.0.0" />
+    <PackageReference Include="EventStore.Client.Grpc.Streams" Version="23.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BankEs.Domain\BankEs.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

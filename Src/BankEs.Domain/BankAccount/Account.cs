@@ -1,4 +1,5 @@
 using BankEs.Domain.BankAccount.Events;
+using BankEs.Domain.BankAccount.Exceptions;
 using BankEs.Domain.BankCustomer;
 using BankEs.Domain.BankMoney;
 
@@ -70,9 +71,9 @@ public class Account
     }
     private void Apply(MoneyWithdrawn moneyWithdrawn)
     {
+        if (State.Balance - moneyWithdrawn.Money < Money.Zero(State.Balance.Currency)) throw new BalanceIsInsufficient();
         State.Balance -= moneyWithdrawn.Money;
     }
-
     public void LoadChanges(long version, object change)
     {
         Version = version;
